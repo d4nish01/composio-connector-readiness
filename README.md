@@ -1,13 +1,13 @@
 # 100-app connector readiness study
 
-A Composio Product Ops take-home by Md Danish. Documentation research, not 100 working integrations. Open `index.html` for the standalone case study.
+A Composio Product Ops take-home by Md Danish. Documentation research, not 100 working integrations. Open the [live case study](https://d4nish01.github.io/composio-connector-readiness/) or `index.html` for the standalone report.
 
 ## Run from this repository
 
-Python 3.10+ is the only runtime dependency. The evidence cache, data and tests are bundled in `research-data.zip` to keep the repository landing page readable. Unpack once before running:
+Python 3.10+ is the only runtime dependency. The evidence cache, data and tests are bundled in `7-research-data.zip` to keep the repository landing page readable. Unpack once before running:
 
 ```sh
-python -m zipfile -e research-data.zip .
+python -m zipfile -e 7-research-data.zip .
 python research.py replay
 python build_report.py
 python -m unittest discover -s tests -v
@@ -65,7 +65,7 @@ The extraction stage is deliberately simple and inspectable. It does not infer p
 - No customer-demand dataset was provided, so priority means readiness, not predicted revenue.
 - Vendor MCP and third-party MCP are distinct. CLI tools are not called public REST APIs.
 - Sandbox access does not imply production access. Personal API tokens do not imply approval for a distributed OAuth integration.
-- The audit sample and rubric are fixed in `data/audit_plan.json`. Field-level results must keep the same denominator before/after. Manual checks are listed separately and remain pending until performed.
+- The source-review sample and rubric are fixed in `data/audit_plan.json`. Field-level results must keep the same denominator before/after. Manual checks are listed separately and remain pending until performed.
 - Public docs can change. Read the observation date and source-specific caveats.
 
 ## Why not a large agent framework?
@@ -84,6 +84,6 @@ python -m unittest discover -s tests -v
 
 Thirteen tests cover manifest completeness, schema, categories, evidence cache, unsafe URL rejection, text parsing and selected routing cases. They do not prove research accuracy.
 
-## Criteria-review additions
+## Operations output
 
 The report includes a complete category-by-stage matrix and a reviewed primary-gate breakdown for the 30-app access-work lane. These are next-step queues, not binary free/paid labels. `data/operations_queue.json` contains 100 proposed next actions with deliberately blank owner/contact/deadline fields. The CSV now includes every assignment research field. Thirteen tests cover structure and reproducibility, not semantic accuracy.
